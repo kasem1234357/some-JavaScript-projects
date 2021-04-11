@@ -1,0 +1,51 @@
+*
+{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+}
+header 
+{
+    min-height: 70px;
+    width: 100%;
+    display: flex;
+    background: #fff;
+    border-bottom: 2px solid #dcdcdc;
+}
+.main h1 
+{
+    color:#fff;
+}
+span 
+{
+    color: turquoise;
+}
+.main 
+{
+    background: #fff8dc;
+    display: flex;
+    min-height: 100vh;
+    text-align: center;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.color-box 
+{
+    min-width: 200px;
+    min-height: 50px;
+    background: #212529;
+    margin-bottom: 30px;
+    padding: 10px;
+}
+button 
+{
+    border: 1px solid  #324564;
+    outline: none;
+    padding: 10px;
+    font-size: 22px;
+    background: transparent;
+    color: #000;
+    cursor: pointer;
+}
