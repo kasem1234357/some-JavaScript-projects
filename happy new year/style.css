@@ -1,0 +1,40 @@
+*
+{
+    margin: 0;
+    padding: 0;
+}
+body
+{
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    min-height: 100vh;
+    background: url(bg.jpg);
+    background-position: center;
+    background-size: cover;
+    flex-direction: column;
+    
+    
+}
+h1
+{
+    color: #fff;
+    margin-top: 20px;
+    font-size: 4rem;
+}
+.container {
+    display: flex;
+    margin-top: 20px;
+    text-align: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+span {
+    color: #fff;
+    font-size: 1.2rem;
+}
+.big-text {
+    font-size: 4rem;
+    padding: 20px;
+    color: #fff;
+}
