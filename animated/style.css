@@ -1,0 +1,135 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body
+{
+    overflow: hidden;
+}
+/*section
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #f1f1f1;
+}*/
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #a91919;
+}
+section img 
+{
+    /*background: #ff2a2a;*/
+    position: absolute;
+    border-radius:100% ;
+    animation: animate linear infinite;
+}
+@keyframes animate 
+{
+    0%
+    {
+        opacity: 0;
+        transform: translateY(0);
+    }
+    10%
+    {
+        opacity: 1;
+    }
+    90%
+    {
+        opacity: 1;
+    }
+    10%
+    {
+        opacity: 0;
+        transform: translateY(-2000%);
+    }
+}
+/*section img:nth-child(even)
+{
+    background: transparent;
+    border: 1px solid #ff2a2a;
+}*/
+section .box {
+    position: absolute;
+    width: 450px;
+    height: 450px;
+    z-index: 10;
+}
+section .box::before
+{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right,#000,transparent);
+    transform-origin: left;
+    transform: rotate(45deg);
+    opacity: 0.1;
+}
+/*section .box .circle 
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg,#fff,#e4e3e8);
+    border-radius:50% ;
+}*/
+section .box .circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+135deg
+,#da0e0e7d,#b33b3b7a);
+    border-radius: 50%;
+}
+/*section .box .circle::before
+{
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    background: linear-gradient(315deg,#fff,#e4e3e8);
+    border-radius: 50%;
+}*/
+section .box .circle::before {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    background: linear-gradient(
+315deg
+,#942222,#ff2a2a);
+    border-radius: 50%;
+    border-radius: 50%;
+    background: linear-gradient(
+145deg
+, #981717, #b51b1b);
+    box-shadow: 20px 20px 60px #901515, -20px -20px 60px #b93030;
+}
+section .box .circle h2
+{
+    position: absolute;
+    z-index: 2;
+    color: /*#ff2a2a*/#fff;
+    text-align: center;
+    font-size: 4rem;
+}
