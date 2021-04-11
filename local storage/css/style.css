@@ -1,0 +1,55 @@
+*
+{
+    box-sizing: border-box;
+}
+body
+{
+    font-family: tahoma;
+}
+.local
+{
+    width: 600px;
+    padding: 15px;
+    margin :40px auto;
+    background: #eee;
+}
+.local input
+{
+    width: 100%;
+    display: block;
+    padding: 15px;
+    margin: 10px 5px;
+    background: #fff;
+    border: none;
+    font-size: 20px;
+}
+.buttons 
+{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    padding: 0 10px;
+}
+.local .buttons span 
+{
+    padding: 4px 15px;
+    color: #fff;
+    display: block;
+    border-radius:5px ;
+    background: rgb(50, 204, 109);
+    cursor: pointer;
+}
+.results
+{
+    padding: 15px;
+    width: 100%;
+    text-align: center;
+    background: #fff;
+}
+.results span span 
+{
+    display: block;
+    font-weight: bold;
+    color: rgb(50, 204, 109);
+    font-size: 22px;
+}
