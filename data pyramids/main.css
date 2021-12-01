@@ -1,0 +1,146 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700");
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  max-width: 100%;
+  overflow-x: hidden;
+  background: radial-gradient(#25242b, rgba(0, 0, 0, 0) 60%), #181521;
+}
+
+.container {
+  --w: min(70vmin, 10rem);
+  /* Hypoteneuse */
+  --h: min(180vmin, 15rem);
+  /* Opposite side – as the points meet in the middle */
+  --o: calc(var(--w) /2);
+  transform-style: preserve-3d;
+  perspective-origin: center -100%;
+  perspective: 100rem;
+  width: var(--w);
+  height: var(--h);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 60rem;
+}
+
+.shape {
+  --c1: turquoise;
+  --c2: teal;
+  position: relative;
+  width: var(--w);
+  height: var(--h);
+  top: 100%;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  perspective: 300rem;
+  transform: rotateY(30deg) translateY(-100%) translateX(var(--x, 0)) translateZ(var(--z, 0));
+  transition: transform 350ms, height 350ms;
+  will-change: height;
+}
+.shape > * {
+  position: absolute;
+  inset: 0;
+}
+.shape:nth-child(odd) {
+  --z: -200px;
+  --x: 150px;
+}
+.shape:nth-child(3n) {
+  --c1: deepskyblue;
+  --c2: mediumblue;
+}
+.shape:nth-child(3n-1) {
+  --c1: orange;
+  --c2: red;
+}
+
+.shape::before {
+  content: "text";
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  color: #fff;
+}
+
+.shape:nth-child(1):before {
+  content: "coding 100%";
+}
+
+.shape:nth-child(2):before {
+  content: "study 80%";
+}
+
+.shape:nth-child(3):before {
+  content: "sport 60%";
+}
+
+.shape:nth-child(4):before {
+  content: "movie 40%";
+}
+
+.shape:nth-child(5):before {
+  content: "friend 20%";
+}
+
+.shape:nth-child(6):before {
+  content: "social 0%";
+}
+
+.shape__base {
+  position: absolute;
+  inset: auto auto 0 0;
+  width: var(--w);
+  height: var(--w);
+  background: var(--c1);
+  transform-origin: bottom center;
+  transform: translateZ(-5rem) translateY(var(--baseY, 0)) rotateX(-90deg);
+}
+.shape__base::after {
+  content: "";
+  position: absolute;
+  inset: auto auto 0 0;
+  width: var(--w);
+  height: var(--w);
+  transform: scale(2);
+  background: radial-gradient(circle at center, black, rgba(0, 0, 0, 0) 65%);
+}
+
+.shape__side {
+  --path: polygon(50% 0, 100% 100%, 0 100%);
+  width: var(--w);
+  height: var(--h);
+  background: linear-gradient(45deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0)), radial-gradient(circle, var(--c1), var(--c1) 0.15rem, transparent 0), linear-gradient(var(--c1), var(--c2));
+  background-size: 100% 100%, 0.75rem 1.75rem, 100% 100%;
+  -webkit-clip-path: var(--path);
+  clip-path: var(--path);
+  transform-origin: bottom center;
+  transform: translate3d(var(--tx, 0), var(--ty, 0), var(--tz, 0)) rotateY(var(--ry, 0)) rotateX(var(--angle, 15deg));
+  transition: transform 350ms, height 350ms;
+  will-change: height;
+}
+.shape__side:first-child {
+  --tz: calc(var(--w) / 2);
+}
+.shape__side:nth-child(2) {
+  --ry: 90deg;
+  --tx: 50%;
+}
+.shape__side:nth-child(3) {
+  --ry: -90deg;
+  --tx: -50%;
+}
+.shape__side:nth-child(4) {
+  --ry: 180deg;
+  --tz: calc(var(--w) / 2 * -1);
+}
